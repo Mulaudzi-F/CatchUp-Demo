@@ -20,7 +20,7 @@ export default function App() {
   const [appState, setAppState] = useState(STATE_IDLE);
   const [roomUrl, setRoomUrl] = useState(null);
   const [callObject, setCallObject] = useState(null);
-  const url = "https://catchup.daily.co/CatchUp";
+  // const url = "https://catchup.daily.co/CatchUp";
 
   /**
    * Creates a new call room.
