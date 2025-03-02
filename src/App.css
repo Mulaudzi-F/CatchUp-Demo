@@ -1,12 +1,18 @@
 /* Updated and beautified UI */
 
+/* Updated and beautified UI */
+
 .app {
   background:
-    url("./public/Wallpaper.jpg") no-repeat center center/cover,
-    linear-gradient(to bottom right, #2c3e50, #4ca1af);
+    linear-gradient(to bottom right, #2c3e50, #4ca1af),
+    url("/Wallpaper.jpg") no-repeat center center;
+  background-size: cover;
   position: absolute;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .browser-unsupported {
@@ -27,10 +33,13 @@
 .call {
   position: relative;
   height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .large-tiles {
-  height: calc(100% - 132.5px);
+  height: 95%;
   width: 80%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -43,7 +52,7 @@
 }
 
 .small-tiles {
-  height: 80px;
+  height: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,12 +172,17 @@
 
 .tray {
   height: 60px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .tray-button {
