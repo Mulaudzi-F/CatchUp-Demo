@@ -12,7 +12,7 @@ export default function StartButton(props) {
       disabled={props.disabled}
       onClick={props.onClick}
     >
-      Hello Olugaho Vhumbani
+      ❤️ Connect with Family
     </button>
   );
 }
