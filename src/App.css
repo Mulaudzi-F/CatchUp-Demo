@@ -1,5 +1,7 @@
+/* Updated and beautified UI */
+
 .app {
-  background-color: #4a4a4a;
+  background: url("./public/Wallpaper.jpg") no-repeat center center/cover;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -8,41 +10,58 @@
 .browser-unsupported {
   position: absolute;
   background: #ffffff;
-  font-family: Helvetica Neue;
+  font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
-  line-height: 17px;
   text-align: center;
   color: #4a4a4a;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .call {
-  position: relative; /* To make it a "positioned" container so children layout works */
-  height: calc(100% - 60px); /* Space for the tray */
+  position: relative;
+  height: calc(100% - 60px);
 }
 
 .large-tiles {
   height: calc(100% - 132.5px);
   width: 80%;
-  position: relative;
   left: 50%;
   transform: translate(-50%, 0);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding: 10px;
+  gap: 15px;
 }
 
 .small-tiles {
-  height: 132.5px; /* Video height + 10px padding either side */
+  height: 80px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tile.small {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.tile.small video {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .call-message {
-  width: auto;
   padding: 20px 30px;
   top: 50%;
   left: 50%;
@@ -50,8 +69,10 @@
   transform: translate(-50%, -50%);
   color: #ffffff;
   text-align: center;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .call-message.error {
@@ -61,139 +82,102 @@
 
 .call-message-header {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .chat {
   position: absolute;
   right: 10px;
   bottom: 75px;
-  width: 250px;
+  width: 300px;
   height: calc(100% - 150px);
-  background-color: #f2f2f2;
-  border-radius: 4px;
-}
-
-.messageList {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
   padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .chat-input {
   position: absolute;
-  bottom: 0px;
-  width: 200px;
-  height: 25px;
+  bottom: 10px;
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .send-chat-button {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: 10px;
+  right: 10px;
   width: 50px;
   height: 31px;
-  background-color: #f2f2f2;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .start-button {
-  padding: 20px 30px;
+  padding: 15px 25px;
   position: absolute;
-  background: #ffffff;
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
   text-align: center;
-  color: #4a4a4a;
+  color: white;
+  background-color: #007bff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.tile.small {
-  width: 200px;
-  margin: 0 10px;
-  position: relative;
+.start-button:hover {
+  background-color: #0056b3;
 }
 
-.tile.large {
+.tile {
   position: relative;
-  margin: 2px;
+  margin: 5px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .tile video {
   width: 100%;
-  position: absolute;
-  top: 0px;
+  border-radius: 8px;
 }
 
 .tile .background {
   background-color: #000000;
   width: 100%;
-  padding-top: 56.25%; /* Hard-coded 16:9 aspect ratio */
-}
-
-.tile.local video {
-  transform: scale(-1, 1);
-}
-
-.tile.small video {
-  border-radius: 4px;
-}
-
-.tile.small .background {
-  border-radius: 4px;
-}
-
-.tile .overlay {
-  position: absolute;
-  color: #ffffff;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.tile .corner {
-  position: absolute;
-  color: #ffffff;
-  background-color: #000000;
-  padding: 10px;
-  margin: 0;
-  bottom: 0;
-  left: 0;
-  font-size: 14px;
-  line-height: 17px;
+  padding-top: 56.25%;
+  border-radius: 8px;
 }
 
 .tray {
-  flex: none;
   height: 60px;
-  background-color: #f2f2f2;
-  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .tray-button {
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border: none;
   background-color: transparent;
-  margin: 0 5px;
-}
-
-.tray-button:disabled {
-  opacity: 33%;
-}
-
-.tray-button:enabled {
   cursor: pointer;
+  transition: transform 0.2s;
 }
 
-/* Acts as the first button in a new "group" of buttons separated from those to the left of it */
-.tray-button.new-group {
-  margin-left: auto;
+.tray-button:hover {
+  transform: scale(1.1);
 }
