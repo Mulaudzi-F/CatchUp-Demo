@@ -14,7 +14,7 @@ import {
   isScreenShare,
   containsScreenShare,
   getMessage,
-} from "./callState";
+} from "./CallState.jsx";
 import { logDailyEvent } from "../logoUtils";
 
 export default function Call() {
