@@ -1,7 +1,8 @@
 .app {
   background:
-    url("/Wallpaper.jpg") no-repeat center center,
-    linear-gradient(to bottom right, #2c3e50, #4ca1af);
+    linear-gradient(to bottom right, #2c3e50, #4ca1af),
+    url("/Wallpaper.jpg") no-repeat center center;
+
   background-size: cover;
   position: absolute;
   height: 100%;
